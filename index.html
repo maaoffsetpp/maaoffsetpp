@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>মা অফসেট প্রিন্টিং প্রেস | Maa Offset Printing Press</title>
+    <style>
+        /* পুরো ওয়েবসাইটের সাধারণ স্টাইল */
+        body {
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* ১. নেভিগেশন বার ও লোগো এরিয়া (সম্পূর্ণ নতুন এবং চওড়া করা হয়েছে) */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #002d62; 
+            padding: 15px 20px; /* দুই পাশের মার্জিন কমানো হয়েছে যেন লেখা বেশি জায়গা পায় */
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0; /* নাম যেন কোনো অবস্থাতেই চেপে ছোট না হয়ে যায় */
+        }
+        .brand-logo {
+            width: 100px; 
+            height: 50px;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .logo-bangla {
+            color: #ffffff;
+            font-size: 20px; /* ফন্ট সাইজ সামঞ্জস্যপূর্ণ করা হলো */
+            font-weight: bold;
+            white-space: nowrap; /* লেখা কোনোভাবেই ভেঙে নিচে যাবে না */
+        }
+        .logo-english {
+            color: #a0c4ff;
+            font-size: 19px;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li {
+            margin-left: 15px; /* মেনুর দূরত্ব কমানো হলো */
+        }
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px; /* মেনুর সাইজ কিছুটা ছোট করা হলো যাতে বামপাশে জায়গা বাড়ে */
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            color: #ff4500;
+        }
+
+        /* ২. স্বাগত ব্যানার সেকশন */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #ffffff;
+        }
+        .hero h1 {
+            color: #ff4500;
+            font-size: 45px;
+            margin: 0 0 15px 0;
+        }
+        .hero p {
+            color: #333333;
+            font-size: 20px;
+            margin: 0;
+        }
+
+        /* ৩. 서비스 সেকশন */
+        .service-section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 32px;
+            color: #002d62;
+            margin-bottom: 40px;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background-color: #ffffff;
+            width: 260px; /* কার্ডের সাইজ কিছুটা কমানো হলো ৪টি কার্ড সুন্দর দেখানোর জন্য */
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: 0.3s ease;
+            text-align: center;
+        }
+        .card h3 {
+            color: #002d62;
+            font-size: 22px;
+            margin-bottom: 15px;
+            margin-top: 0;
+        }
+        .card p {
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        .card-btn {
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .card-btn:hover {
+            background-color: #e03d00;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        /* ৪. যোগাযোগ ও গুগল ম্যাপ সেকশন */
+        .contact-map-section {
+            padding: 60px 20px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+        .grid-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .contact-form input, .contact-form textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+        .submit-btn {
+            background-color: #002d62;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #001f44;
+        }
+        .map-container {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* ৫. ফুটার সেকশন */
+        .footer {
+            background-color: #002d62;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 16px;
+        }
+        .footer p {
+            margin: 5px 0;
+            color: #ffffff;
+        }
+        .footer .copyright {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #a0c4ff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ১. নেভিগেশন বার ও লোগো এরিয়া -->
+    <nav class="navbar">
+        <div class="logo-area">
+            <img src="logo.png" alt="Maa Offset Logo" class="brand-logo">
+            <div class="logo-text">
+                <span class="logo-bangla">মা অফসেট প্রিন্টিং প্রেস</span>
+                <span class="logo-english">Maa Offset Printing Press</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">হোম</a></li>
+            <li><a href="#">আমাদের সেবা</a></li>
+            <li><a href="#">পোর্টফোলিও</a></li>
+            <li><a href="#">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+    <!-- ২. স্বাগত ব্যানার সেকশন -->
+    <div class="hero">
+        <h1>মা অফসেট প্রিন্টিং প্রেস</h1>
+        <p>সঠিক সময়ে নিখুঁত ও উন্নত মানের প্রিন্টিংয়ের বিশ্বস্ত প্রতিষ্ঠান।</p>
+    </div>
+
+    <!-- ৩. সার্ভিস সেকশন -->
+    <div class="service-section">
+        <h2 class="section-title">আমাদের সেবাসমূহ</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>ভিজিটিং কার্ড</h3>
+                <p>উন্নত মানের পেপার ও নিখুঁত প্রিন্টিংয়ে আপনার ব্যবসার জন্য আকর্ষণীয় বিজনেস কার্ড।</p>
+                <button class="card-btn">অর্ডার করুন</button>
+            </div>
+            <div class="card">
+                <h3>ক্যাশ মেমো ও বিল বই</h3>
+                <p>যেকোনো সাইজের কার্বন বা নন-কার্বন পেপারে নিখুঁত দাগকাটা ক্যাশ মেমো ও চালান বই।</p>
+                <button class="card-btn">অর্ডার করুন</button>
+            </div>
+            <div class="card">
+                <h3>লিফলেট ও পোস্টার</h3>
+                <p>আপনার ব্যবসার প্রচার বাড়াতে আকর্ষণীয় ডিজাইনে রঙিন লিফলেট ও হ্যান্ডবিল।</p>
+                <button class="card-btn">অর্ডার করুন</button>
+            </div>
+            <div class="card">
+                <h3>তৈরি করা বিয়ের কার্ড</h3>
+                <p>আকর্ষণীয় চমৎকার ডিজাইনে তৈরি করুন বিয়ের ও উৎসবের নিমন্ত্রণ কার্ড।</p>
+                <button class="card-btn">অর্ডার করুন</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ৪. যোগাযোগ ও গুগল ম্যাপ সেকশন -->
+    <div class="contact-map-section">
+        <h2 class="section-title">যোগাযোগ ও লোকেশন</h2>
+        <div class="grid-container">
+            <form class="contact-form">
+                <input type="text" placeholder="আপনার নাম" required>
+                <input type="email" placeholder="আপনার ইমেইল বা মোবাইল নম্বর" required>
+                <textarea placeholder="আপনি কী প্রিন্ট করতে চান বিস্তারিত লিখুন..." rows="5" required></textarea>
+                <button type="submit" class="submit-btn">বার্তা পাঠান</button>
+            </form>
+            
+            <div class="map-container">
+                <iframe src="https://google.com" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- ৫. ফুটার সেকশন -->
+    <footer class="footer">
+        <p>📍 মা অফসেট প্রিন্টিং প্রেস | ঠিকানা: স্বপ্নদ্বীপ শপিংমল (দ্বিতীয় তলা), মোগরাপাড়া চৌরাস্তা, থানা রোড, সোনারগাঁও, নারায়ণগঞ্জ, বাংলাদেশ।</p>
+        <p>📞 মোবাইল: +88 01735-652990 | ✉️ ইমেইল: nibaronchandra1@gmail.com</p>
+        <p class="copyright">&copy; ২০২৬ মা অফসেট প্রিন্টিং প্রেস। সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
+
+</body>
+</html>
